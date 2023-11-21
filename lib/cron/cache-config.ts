@@ -36,6 +36,12 @@ export const chainProtocols = [
   },
   {
     protocol: Protocol.V3,
+    chainId: ChainId.UCHAIN,
+    timeout: 90000,
+    provider: new V3SubgraphProvider(ChainId.UCHAIN, 3, 90000),
+  },
+  {
+    protocol: Protocol.V3,
     chainId: ChainId.AVALANCHE,
     timeout: 90000,
     provider: new V3SubgraphProvider(ChainId.AVALANCHE, 3, 90000),

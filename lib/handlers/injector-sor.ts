@@ -59,6 +59,7 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.CELO,
   ChainId.CELO_ALFAJORES,
   ChainId.BNB,
+  ChainId.UCHAIN,
   ChainId.AVALANCHE,
   ChainId.BASE,
 ]

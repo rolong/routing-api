@@ -26,6 +26,7 @@ import {
   USDC_SEPOLIA,
   USDT_ARBITRUM,
   USDT_BNB,
+  USDT_UCHAIN,
   USDT_GOERLI,
   USDT_MAINNET,
   USDT_OPTIMISM,
@@ -99,8 +100,10 @@ export const USDT_ON = (chainId: ChainId): Token => {
       return USDT_OPTIMISM
     case ChainId.ARBITRUM_ONE:
       return USDT_ARBITRUM
-    case ChainId.BNB:
-      return USDT_BNB
+      case ChainId.BNB:
+        return USDT_BNB
+        case ChainId.UCHAIN:
+          return USDT_UCHAIN
     default:
       throw new Error(`Chain id: ${chainId} not supported`)
   }
