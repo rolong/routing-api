@@ -15,7 +15,7 @@
     "test": "jest test/jest/. && ts-mocha -p tsconfig.cdk.json -r test/mocha/dynamoDBLocalFixture.ts test/mocha/unit --recursive --extension .test.ts",
     "integ-test": "ts-mocha -p tsconfig.cdk.json -r dotenv/config test/mocha/integ/**/*.test.ts",
     "cdk": "cdk deploy RoutingAPIStack",
-    "cdk2": "cdk bootstrap",
+    "cdk2": "cdk bootstrap --verbose",
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"./**/*.ts\" --write",
     "fix:lint": "eslint lib --ext .ts --fix",

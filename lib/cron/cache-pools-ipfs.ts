@@ -79,7 +79,7 @@ const handler: ScheduledHandler = async (event: EventBridgeEvent<string, void>) 
   try {
     log.info({ result }, `Pinning to pinata: ${PARENT}`)
     result = await pinata.pinFromFS(PARENT)
-    const url = `https://ipfs.io/ipfs/${result.IpfsHash}`
+    const url = `https://ipfs.uchain.ai/ipfs/${result.IpfsHash}`
     hash = result.IpfsHash
 
     log.info({ result }, `Successful pinning. IPFS hash: ${hash} and url : ${url}`)

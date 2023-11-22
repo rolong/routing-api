@@ -317,9 +317,12 @@ export class RoutingAPIStack extends cdk.Stack {
     // Alarms for high 400 error rate for each chain
     const percent4XXByChainAlarm: cdk.aws_cloudwatch.Alarm[] = []
     SUPPORTED_CHAINS.forEach((chainId) => {
-      if (CHAINS_NOT_MONITORED.includes(chainId)) {
+      if(chainId !== ChainId.UCHAIN) {
         return
       }
+      // if (CHAINS_NOT_MONITORED.includes(chainId)) {
+      //   return
+      // }
       const alarmName = `RoutingAPI-SEV3-4XXAlarm-ChainId: ${chainId.toString()}`
       const metric = new MathExpression({
         expression: '100*(response400/invocations)',
@@ -346,9 +349,12 @@ export class RoutingAPIStack extends cdk.Stack {
     // Alarms for high 500 error rate for each chain
     const successRateByChainAlarm: cdk.aws_cloudwatch.Alarm[] = []
     SUPPORTED_CHAINS.forEach((chainId) => {
-      if (CHAINS_NOT_MONITORED.includes(chainId)) {
+      if(chainId !== ChainId.UCHAIN) {
         return
       }
+      // if (CHAINS_NOT_MONITORED.includes(chainId)) {
+      //   return
+      // }
       const alarmName = `RoutingAPI-SEV2-SuccessRate-Alarm-ChainId: ${chainId.toString()}`
       const metric = new MathExpression({
         expression: '100*(response200/(invocations-response400))',

@@ -24,6 +24,8 @@ const ID_TO_PROVIDER = (id: ChainId): string => {
       return ProviderName.QUIKNODE
     case ChainId.CELO_ALFAJORES:
       return ProviderName.FORNO
+    case ChainId.UCHAIN:
+      return ProviderName.UCHAIN
     default:
       return ProviderName.UNKNOWN
   }
